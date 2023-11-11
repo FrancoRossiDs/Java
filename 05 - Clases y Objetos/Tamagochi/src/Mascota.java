@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 public class Mascota {
     String nombre = "Rufus";
     double energia = 50.0;
@@ -26,19 +27,22 @@ public class Mascota {
     // Método para dar de comer a la mascota
     void darDeComer(Scanner input) {
         System.out.println("Tipos de comida");
-        System.out.println("Galletas: ↑20 Energía");
-        System.out.println("Carne: ↑15 Energía");
-        System.out.println("Pollo: ↑10 Energía");
-        System.out.println("Fruta: ↑5 Energía ↓5 Humor");
-        System.out.println("Verdura: ↑3 Energía ↓10 Humor");
+        System.out.println("1: Galletas: ↑20 Energía");
+        System.out.println("2: Carne: ↑15 Energía");
+        System.out.println("3: Pollo: ↑10 Energía");
+        System.out.println("4: Fruta: ↑5 Energía ↓5 Humor");
+        System.out.println("5: Verdura: ↑3 Energía ↓10 Humor");
+        System.out.println("6: Cancelar");
 
         int opcionComida = input.nextInt();
         int energiaComida = 0;
 
-        if (dormir) {
+        if (peso >= 100 || energia <= 0) {
+            System.out.println("Verifique a " + nombre);
+        } else if (dormir) {
             System.out.println(nombre + " está dormido. No puede comer.");
             return;
-        }else {
+        } else {
             switch (opcionComida) {
                 case 1:
                     energiaComida = 20;
@@ -59,8 +63,11 @@ public class Mascota {
                     energiaComida = 3;
                     humor -= 10;
                     break;
+                case 6:
+                    System.out.println("Cancelando");
+                    return;
                 default:
-                    System.out.println("Comida no válida.");
+                    System.out.println("Opción no válida.");
                     return;
             }
             energia += energiaComida;
@@ -69,17 +76,16 @@ public class Mascota {
             humor += 5;  // Aumenta el humor por defecto
             System.out.println("Has dado de comer a " + nombre);
         }
-
-
     }
 
     // Método para hacer dormir a la mascota (con relación 1.5)
-    // Método para hacer dormir a la mascota (con relación 1.5)
     void hacerDormir(Scanner input) {
-        if (dormir) {
+        if (peso >= 100 || energia <= 0) {
+            System.out.println("Verifique a " + nombre);
+        } else if (dormir) {
             System.out.println(nombre + " ya está durmiendo.");
             return;
-            }else {
+        } else {
             System.out.println("¿Cuántas horas quieres que duerma?");
             int tiempoSueno = input.nextInt();
 
@@ -90,11 +96,6 @@ public class Mascota {
 
             if (energia >= umbralEnergiaparaDormir) {
                 System.out.println("No quiero dormir :P");
-                return;
-            }
-
-            if (tiempoTotalSueno + tiempoSueno > limiteSueno * 1.5 * 3600) {
-                System.out.println("No quiero dormir más.");
                 return;
             }
 
@@ -110,13 +111,25 @@ public class Mascota {
             energia += energiaAumentada;
 
             System.out.println(nombre + " está durmiendo durante " + tiempoSueno / 3600 / 1.5 + " horas.");
-        }
 
+            // Despierta automáticamente después de alcanzar el límite de sueño
+            new java.util.Timer().schedule(
+                    new java.util.TimerTask() {
+                        @Override
+                        public void run() {
+                            despertar();
+                        }
+                    },
+                    tiempoSueno
+            );
+        }
     }
 
 
     void despertar() {
-        if (dormir) {
+        if (peso >= 100 || energia <= 0) {
+            System.out.println("Verifique a " + nombre);
+        } else if (dormir) {
             dormir = false;
             tiempoTotalSueno = 0; // Resetea el tiempo total de sueño
             System.out.println(nombre + " se ha despertado.");
@@ -125,39 +138,40 @@ public class Mascota {
         }
     }
 
-    void hacerCaminar(){
-        if (dormir) {
+    void hacerCaminar() {
+        if (peso >= 100 || energia <= 0) {
+            System.out.println("Verifique a " + nombre);
+        } else if (dormir) {
             System.out.println(nombre + " está dormido. No puede caminar.");
-            return;
-        }else {
+        } else {
             if (energia >= 5 && peso >= 5) {
-                energia -= 5;
-                peso -= 5;
+                energia -= 10;
+                peso -= 10;
                 System.out.println(nombre + " ha caminado. Energía disminuida en 5 y peso disminuido en 5.");
             } else {
                 System.out.println(nombre + " no tiene suficiente energía o está demasiado ligero para caminar.");
             }
         }
-
     }
 
-    void hacerCorrer(){
-        if (dormir) {
+    void hacerCorrer() {
+        if (peso >= 100 || energia <= 0) {
+            System.out.println("Verifique a " + nombre);
+        } else if (dormir) {
             System.out.println(nombre + " está dormido. No puede correr.");
             return;
-        }else {
+        } else {
             if (energia >= 10 && peso >= 10) {
-                energia -= 10;
-                peso -= 10;
+                energia -= 20;
+                peso -= 20;
                 System.out.println(nombre + " ha corrido. Energía disminuida en 10 y peso disminuido en 10.");
             } else {
                 System.out.println(nombre + " no tiene suficiente energía o está demasiado ligero para correr.");
             }
         }
-
     }
 
-    void verificarEstado(){
+    void verificarEstado() {
         System.out.println("Estado actual de " + nombre + ":");
         System.out.println("Energía: " + energia);
         System.out.println("Peso: " + peso);
@@ -170,11 +184,11 @@ public class Mascota {
         }
     }
 
-    void resetearMascota(Scanner input){
+    void resetearMascota(Scanner input) {
         System.out.println("¿Quieres cambiar el nombre de tu mascota? (Sí/No)");
         String cambiarNombre = input.next().toLowerCase();
 
-        if (cambiarNombre.equals("si")){
+        if (cambiarNombre.equals("si")) {
             System.out.println("Ingresa el nuevo nombre para tu mascota:");
             nombre = input.next();
         }
@@ -188,3 +202,4 @@ public class Mascota {
         System.out.println(nombre + " ha sido reseteado a los valores originales.");
     }
 }
+

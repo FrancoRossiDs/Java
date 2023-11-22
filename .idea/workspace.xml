@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="87c090f7-e167-4db9-9022-1c4a81c1dc68" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/00 - Repaso/Repaso_Datos/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04 - Intellij/Ejercicios/Ejercicios.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04 - Intellij/Repaso/Repaso.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/07 - Herencia y Polimorfismo/untitled/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/07 - Herencia y Polimorfismo/untitled/.idea/misc.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,9 +16,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2XyBGdtct7n6EENGzmKdzBDb9wO" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -30,7 +29,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/Franc/OneDrive/Escritorio/Programacion/Java/CdF/Java",
+    "last_opened_file_path": "C:/Users/CASA DEL FUTURO/Desktop/java/00 - Repaso",
     "settings.editor.selected.configurable": "advanced.settings"
   }
 }]]></component>

@@ -1,0 +1,3 @@
+*.di export-ignore
+*.notation export-ignore
+*.uml export-ignore

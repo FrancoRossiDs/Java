@@ -1,3 +1,4 @@
-*.di export-ignore
-*.notation export-ignore
-*.uml export-ignore
+*.di linguist-language=Java
+*.notation linguist-language=Java
+*.uml linguist-language=Java
+

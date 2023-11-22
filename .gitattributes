@@ -1,4 +1,1 @@
-*.di linguist-language=Java
-*.notation linguist-language=Java
-*.uml linguist-language=Java
-
+text eol=lf

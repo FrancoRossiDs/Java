@@ -184,7 +184,6 @@ public class Main {
             *Se llama a los metodos para aparcar se le les manda los autos*
             garage.park(car1);
             garage.park(car2);
-
                 }
             }
 
@@ -430,7 +429,7 @@ public class Main {
 
             try{
             }catch(<Tipo de excepción> <nombre de la excepción>){
-                sout("Poible mensaje")
+                sout("Posible mensaje")
             }
 
             - ArithmeticException: operacion aritmetica ilegar

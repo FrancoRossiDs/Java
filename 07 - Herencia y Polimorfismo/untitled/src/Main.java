@@ -1,7 +1,6 @@
 public class Main {
-    public static void main(String[] args) {
-        Gerente gerente=new Gerente();
-        Empleado empleado=new Empleado();
-    }
+
+    Empleado empleado=new Empleado("Franco",2000);
+    Gerente gerente=new Gerente();
 
 }

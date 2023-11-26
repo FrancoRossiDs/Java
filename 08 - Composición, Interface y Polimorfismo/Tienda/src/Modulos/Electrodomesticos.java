@@ -1,7 +1,7 @@
 package Modulos;
 
 public class Electrodomesticos extends  Producto implements Vendible{
-    private String marca;
+    private final String marca;
     private double consumo;
     private int anio;
 
@@ -17,17 +17,6 @@ public class Electrodomesticos extends  Producto implements Vendible{
         return getPrecioBase() * getUnidades();
     }
 
-    public String getMarca() {
-        return marca;
-    }
-
-    public void setMarca(String marca) {
-        this.marca = marca;
-    }
-
-    public double getConsumo() {
-        return consumo;
-    }
 
     public void setConsumo(double consumo) {
         this.consumo = consumo;

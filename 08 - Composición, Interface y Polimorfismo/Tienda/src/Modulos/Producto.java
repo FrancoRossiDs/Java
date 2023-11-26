@@ -1,9 +1,9 @@
 package Modulos;
 
 public abstract class Producto implements Vendible {
-    private String nombre;
-    private double precioBase;
-    private int unidades;
+    private final String nombre;
+    private final double precioBase;
+    private final int unidades;
 
     public Producto(String nombre, double precioBase, int unidades) {
         this.nombre = nombre;

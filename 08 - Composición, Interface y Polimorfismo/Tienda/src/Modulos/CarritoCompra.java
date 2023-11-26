@@ -6,9 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CarritoCompra {
-    private List<Vendible> productos;
-    private Scanner scanner;
-    private Cliente cliente;
+    private final List<Vendible> productos;
+    private final Scanner scanner;
+    private final Cliente cliente;
 
     public CarritoCompra(Scanner scanner, Cliente cliente) {
         this.scanner = scanner;
@@ -34,7 +34,7 @@ public class CarritoCompra {
             System.out.println("Ingrese la cantidad de unidades: ");
             int unidades = scanner.nextInt();
 
-            scanner.nextLine();  // Limpiar el buffer
+            scanner.nextLine();
 
             Vendible producto;
 

@@ -1,14 +1,8 @@
 import Clientes.Cliente;
 import Clientes.clientePremium;
 import Clientes.clienteRegular;
-import Modulos.Electrodomesticos;
-import Modulos.Ropa;
-import Modulos.Verduras;
 import Modulos.CarritoCompra;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
-import Modulos.Vendible;
 
 
 public class Main {

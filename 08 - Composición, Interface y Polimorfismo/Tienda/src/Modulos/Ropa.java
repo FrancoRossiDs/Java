@@ -5,16 +5,17 @@ public class Ropa extends Producto implements Vendible{
     private String marca;
     private String disenador;
 
-    Ropa(String nombre, double precio_base,int unidades,String material,String marca, String disenador){
+    public Ropa(String nombre, double precio_base,int unidades,String material,String marca, String disenador){
         super(nombre,precio_base,unidades);
         this.material=material;
         this.marca=marca;
         this.disenador=disenador;
     }
 
+
     @Override
-    public void calcularPrecio() {
-        System.out.println("Precio de " +getNombre()+ " es " + (getPrecio_base()*getUnidades()));
+    public double calcularPrecio() {
+        return getPrecioBase() * getUnidades();
     }
 
     public String getMaterial() {

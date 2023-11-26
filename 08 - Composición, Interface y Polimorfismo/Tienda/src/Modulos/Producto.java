@@ -11,6 +11,7 @@ public abstract class Producto implements Vendible {
         this.unidades = unidades;
     }
 
+    @Override
     public String getNombre() {
         return nombre;
     }
@@ -25,3 +26,4 @@ public abstract class Producto implements Vendible {
 
     public abstract double calcularPrecio();
 }
+

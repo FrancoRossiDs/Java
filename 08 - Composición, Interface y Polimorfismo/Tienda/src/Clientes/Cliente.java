@@ -1,7 +1,8 @@
 package Clientes;
 
 import Modulos.Producto;
+import Modulos.Vendible;
 
 public interface Cliente {
-    void realizarCompra(Producto producto);
+    void realizarCompra(Vendible producto);
 }

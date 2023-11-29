@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link th:href="@{/style.css}" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <h1>Hola</h1>
+    <h2 th:text="${saludo}"></h2>
+    <p th:text="${numUno} + ${numDos}"></p>
+    <p th:text="${#calendars.format(fecha, 'dd/MM/yyyy')}"></p>
+
+    <ul th:each="producto: ${productos}" class="carta">
+        <li th:text="${producto.nombre}"></li>
+        <li th:text="${producto.marca}"></li>
+        <li th:text="${producto.precio}"></li>
+        <li th:text="${producto.stock}"></li>
+        <li th:text="${producto.disponibilidad == true ? 'Hay Stock' : 'No hay Stock'}"></li>
+        <li> <img th:src="${producto.img}" src="" alt="" class="imagen-producto"></li>
+    </ul>
+</body>
+</html>

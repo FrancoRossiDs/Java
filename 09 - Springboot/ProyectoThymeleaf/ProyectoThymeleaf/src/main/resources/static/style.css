@@ -1,0 +1,30 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: blue;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+}
+
+.carta {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    width: 200px; /* Puedes ajustar el ancho según tus necesidades */
+    text-align: center;
+    display: inline-block;
+    background-color:red;
+}
+
+.imagen-producto {
+    max-width: 100%; /* Ajusta el tamaño máximo de la imagen al contenedor de la carta */
+    height: auto; /* Para mantener la proporción de la imagen */
+}
+

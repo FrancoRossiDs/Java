@@ -1,18 +1,18 @@
 package com.example.ProyectoIntegradorJava.Modules;
 
-public class Producto {
+public class Producto implements Vendible {
     private String nombre;
     private String marca;
     private double precio;
     private boolean disponibilidad;
     private String img;
 
-    public Producto(String nombre, String marca, double precio,String img, boolean disponibilidad){
-        this.nombre=nombre;
-        this.marca=marca;
-        this.precio=precio;
-        this.disponibilidad=disponibilidad;
-        this.img=img;
+    public Producto(String nombre, String marca, double precio, String img, boolean disponibilidad) {
+        this.nombre = nombre;
+        this.marca = marca;
+        this.precio = precio;
+        this.disponibilidad = disponibilidad;
+        this.img = img;
     }
 
     public String getNombre() {
@@ -54,4 +54,12 @@ public class Producto {
     public void setImg(String img) {
         this.img = img;
     }
+
+    // Implementación del método calcularPrecio de la interfaz Vendible
+    @Override
+    public double calcularPrecio() {
+        return precio;
+    }
 }
+
+

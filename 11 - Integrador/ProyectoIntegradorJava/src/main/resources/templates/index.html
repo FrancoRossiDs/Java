@@ -1,33 +1,26 @@
+<!-- index.html -->
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Carrito de Compra</title>
+    <meta charset="UTF-8">
+    <title>Productos</title>
 </head>
 <body>
-<h2>Carrito de Compra</h2>
+<h1>Productos</h1>
 
-<table>
-    <thead>
-    <tr>
-        <th>Producto</th>
-        <th>Precio</th>
-    </tr>
-    </thead>
-    <tbody>
-    <ul th:each="producto: ${productos}" class="carta">
-        <li th:text="${producto.nombre}"></li>
-        <li th:text="${producto.marca}"></li>
-        <li th:text="${producto.precio}"></li>
-        <!-- Resto de los atributos... -->
-        <li> <img th:src="${producto.img}" src="" alt="" class="imagen-producto"></li>
-    </ul>
-    </tbody>
-</table>
+<!-- Iterar sobre la lista de productos -->
+<ul th:each="producto : ${productos}">
+    <li th:text="${producto.nombre}"></li>
+    <li th:text="${producto.marca}"></li>
+    <li th:text="${producto.precio}"></li>
+    <li th:text="${producto.disponibilidad} ? 'Disponible' : 'No disponible'"></li>
+    <!-- Agregar más atributos según sea necesario -->
+</ul>
 
-<p>Total: <span th:text="${carrito.calcularTotal()}"></span></p>
-
-<form action="/usuario/realizarCompra" method="post">
-    <button type="submit">Realizar Compra</button>
-</form>
+<!-- Enlace al carrito -->
+<a th:href="@{/usuario/carrito}">Ver Carrito</a>
 </body>
 </html>
+
+
+
